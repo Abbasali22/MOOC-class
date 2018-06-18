@@ -2,26 +2,24 @@ import java.util.*;
 import java.util.Scanner;
 
 class Main {
-
-  public static void smartCombine(ArrayList<Integer> first, ArrayList<Integer> second){
-    for (int number: second) {
-      if (!first.contains(number)){
-        first.add(number);
-      }
-    }
+  public static void combine(ArrayList<Integer> first, ArrayList<Integer> second){
+    first.addAll(second);
   }
   public static void main(String[] args) {
-
     ArrayList<Integer> list1 = new ArrayList<Integer>();
     ArrayList<Integer> list2 = new ArrayList<Integer>();
 
-    Collections.addAll(list1, 4, 3);
+    list1.add(4);
+    list1.add(3);
 
-    Collections.addAll(list2, 5, 10, 4, 3, 7);
+    list2.add(5);
+    list2.add(10);
+    list2.add(7);
 
-    smartCombine(list1, list2);
+    combine(list1, list2);
 
-    System.out.println(list1);
-    System.out.println(list2);
+    System.out.println(list1); // prints [4, 3, 5, 10, 7]
+
+    System.out.println(list2); // prints [5, 10, 7]
   }
 }
